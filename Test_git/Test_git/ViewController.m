@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 @interface ViewController ()
 
 @end
@@ -17,6 +19,13 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+	
+	self.view.backgroundColor = [UIColor grayColor];
+	for (int i = 0; i < 4; i++) {
+		UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(i * SCREEN_WIDTH/4 + 5, SCREEN_HEIGHT/3, SCREEN_WIDTH/4 - 10, 40)];
+		button.backgroundColor = [UIColor yellowColor];
+		[self.view addSubview:button];
+	}
 }
 
 
